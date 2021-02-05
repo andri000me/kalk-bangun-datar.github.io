@@ -1,0 +1,15 @@
+img {
+  width: 200px;
+}
+
+.footer {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 100;
+  font-size: x-small;
+  padding: 0.5em;
+  background-color: #ffffff;
+}
+
+.width100{
+    width: 100%;
+}

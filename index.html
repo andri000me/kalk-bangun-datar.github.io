@@ -1,0 +1,327 @@
+<!-- 
+    Catatan : 
+    padding kanan masih ngaco (clear), 
+    reset btn tidak work lagi (clear),
+    submit btn error (clear),
+    menu inputNilai() error ,
+-->
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <title>Kalkulator Bangun Datar</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <!-- wrapper pertama -->
+    <section class="container d-flex justify-content-center my-5">
+        <!-- wrapper kedua -->
+        <div class="col-12 d-flex justify-content-center shadow my-2 p-1 bg-white rounded p-2"
+            style="border: 2px solid #ddd;">
+            <!-- wrapper ketiga -->
+            <div class="col-11">
+                <h2 class="text-center font-weight-bold">Kalkulator Bangun Datar</h2>
+                <hr />
+                <h4 class="font-weight-bold">Pengertian Bangun Datar</h4>
+                <div id="show" style="display: block;">
+                    <button onclick="show()" class="my-2 btn btn-primary btn-sm">Tampilkan</button>
+                </div>
+                <div id="hide" style="display: none;">
+                    <button onclick="hide()" class="my-2 btn btn-danger btn-sm">Tutup</button>
+                    <p>
+                        Bangun Datar merupakan suatu bidang datar atau plane geometry yang terbentuk melalui titik atau
+                        garis hingga membangun 2 dimensi dan memiliki rumus luas dan keliling. -
+                        <a target="_blank"
+                            href="https://www.suara.com/tekno/2020/12/03/174940/kumpulan-rumus-jenis-dan-pengertian-bangun-datar?page=all">suara.com</a>.
+                    </p>
+                </div>
+
+                <div class="form-group">
+                    <!-- pilihan menu -->
+                    <select class="my-2" onclick="inpMenu()" id="inpMenu">
+                        <option selected value="pers">Persegi</option>
+                        <option value="persPanj">Persegi Panjang</option>
+                        <option value="segi">Segitiga</option>
+                        <option value="ling">Lingkaran</option>
+                        <option value="jajaGenj">Jajar Genjang</option>
+                        <option value="belaKetu">Belah Ketupat</option>
+                        <option value="trap">Trapesium</option>
+                        <option value="layaLaya">Layang - Layang</option>
+                    </select>
+                    <!-- keterangan menu -->
+                    <div id="ket" class="row my-2">
+                        <div class="col" id="peng">
+                            <!-- tampungan pengertian()-->
+                            <h5 class="font-weight-bold">
+                                Persegi
+                            </h5>
+                            <p>
+                                Persegi adalah bangun datar dua dimensi yang dibentuk oleh empat buah rusuk ( a ) yang
+                                sama panjang dan memiliki empat buah sudut yang kesemuanya adalah sudut siku-siku.
+                                Bangun ini disebut juga sebagai <strong>bujur sangkar</strong>.
+                            </p>
+                        </div>
+                        <div class="col" id="gmbr">
+                            <!-- tampungan imagePath()-->
+                            <div class="d-flex justify-content-center"><img src="./img/Persegi.png"
+                                    alt="gambar bangun datar">
+                            </div>
+                        </div>
+                        <div class="col" id="rums">
+                            <div>
+                                <h5 class="font-weight-bold ">
+                                    Rumus
+                                </h5>
+                                <div class="row my-2">
+                                    <div class="col-md-6 col-sm-6">
+                                        <p id="ketRumusKeli">
+                                            <!-- tampungan inpRumus()-->
+                                            <span class="font-weight-bold">Keliling</span> Sisi * 4 atau 4(Sisi)
+                                        </p>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6">
+                                        <p id="ketRumusLuas">
+                                            <!-- tampungan inpRumus()-->
+                                            <span class="font-weight-bold">Luas</span> Sisi * sisi
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- tampungan nilai persegi -->
+                                <div class="row my-2" id="inpNilaiPers">
+                                    <div class="col-md-12 col-sm-12">
+                                        <label class="width100">
+                                            Masukan niali sisi :
+                                        </label>
+                                        <br>
+                                        <input type="tel" class="width100" id="nilaiSisiPers"
+                                            placeholder="Masukan disini..." />
+                                    </div>
+                                </div>
+                                <!-- tampungan nilai persegi panjang -->
+                                <div class="row my-2" id="inpNilaiPersPanj">
+                                    <div class="col-md-12 col-sm-12">
+                                        <label class="width100">Masukan nilai panjang :</label>
+                                        <br />
+                                        <input class="width100" type="tel" id="nilaiPanjPersPanj"
+                                            placeholder="masukan disini..." />
+                                    </div>
+                                    <div class="col-md-12 col-sm-12">
+                                        <label class="width100">Masukan nilai lebar :</label>
+                                        <br />
+                                        <input class="width100" type="tel" id="nilaiLebaPersPanj"
+                                            placeholder="masukan disini..." />
+                                    </div>
+                                </div>
+                                <!-- tampungan nilai segitiga -->
+                                <div class="row my-2" id="inpNilaiSegi">
+                                    <div class="col-md-12 col-sm-12">
+                                        <label class="width100">Masukan nilai sisi :</label>
+                                        <br />
+                                        <input class="width100" type="tel" id="nilaiSisiSegi"
+                                            placeholder="masukan disini..." />
+                                    </div>
+                                    <div class="col-md-12 col-sm-12">
+                                        <label class="width100">Masukan nilai alas :</label>
+                                        <br />
+                                        <input class="width100" type="tel" id="nilaiAlasSegi"
+                                            placeholder="masukan disini..." />
+                                    </div>
+                                    <div class="col-md-12 col-sm-12">
+                                        <label class="width100">Masukan nilai tinggi :</label>
+                                        <br />
+                                        <input class="width100" type="tel" id="nilaiTingSegi"
+                                            placeholder="masukan disini..." />
+                                    </div>
+                                </div>
+
+                                <!-- tampungan nilai lingkaran -->
+                                <div class="row my-2" id="inpNilaiLing">
+                                    <div class="col-md-12 col-sm-12">
+                                        <select id="nilaiROrDLing" class="width100 my-2">
+                                            <option value="null" disabled selected>
+                                                Masukan pilihan :
+                                            </option>
+                                            <option value="d">Diameter</option>
+                                            <option value="r">Jari - jari</option>
+                                        </select>
+                                        <br />
+                                        <input class="width100" type="tel" id="nilaiLing"
+                                            placeholder="masukan disini..." />
+                                    </div>
+                                </div>
+
+                                <!-- tampungan nilai jajar genjang -->
+                                <div class="row my-2" id="inpNilaiJajaGenj">
+                                    <div class="col-md-12 col-sm-12">
+                                        <label class="width100">Masukan nilai alas :</label>
+                                        <br />
+                                        <input class="width100" type="tel" id="nilaiAlasJajaGenj"
+                                            placeholder="masukan disini..." />
+                                    </div>
+                                    <div class="col-md-12 col-sm-12">
+                                        <label class="width100">Masukan nilai sisi miring :</label>
+                                        <br />
+                                        <input class="width100" type="tel" id="nilaiSmJajaGenj"
+                                            placeholder="masukan disini..." />
+                                    </div>
+                                    <div class="col-md-12 col-sm-12">
+                                        <label class="width100">Masukan nilai tinggi :</label>
+                                        <br />
+                                        <input class="width100" type="tel" id="nilaiTingJajaGenj"
+                                            placeholder="masukan disini..." />
+                                    </div>
+                                </div>
+
+                                <!-- tampungan nilai belah ketupat -->
+                                <div class="row my-2" id="inpNilaiBelaKetu">
+                                    <div class="col-md-12 col-sm-12">
+                                        <label class="width100">Masukan nilai sisi :</label>
+                                        <br />
+                                        <input class="width100" type="tel" id="nilaiSisiBelaKetu"
+                                            placeholder="masukan disini..." />
+                                    </div>
+                                    <div class="col-md-12 col-sm-12">
+                                        <label class="width100">Masukan nilai diagonal 1 :</label>
+                                        <br />
+                                        <input class="width100" type="tel" id="nilaiDia1BelaKetu"
+                                            placeholder="masukan disini..." />
+                                    </div>
+                                    <div class="col-md-12 col-sm-12">
+                                        <label class="width100">Masukan nilai diagonal 2 :</label>
+                                        <br />
+                                        <input class="width100" type="tel" id="nilaiDia2BelaKetu"
+                                            placeholder="masukan disini..." />
+                                    </div>
+                                </div>
+
+                                <!-- tampungan nilai trapesium -->
+                                <div class="row my-2" id="inpNilaiTrap">
+                                    <div class="col-md-6 col-sm-6">
+                                        <label class="width100">Masukan nilai sisi atas :</label>
+                                        <br />
+                                        <input class="width100" type="tel" id="nilaiSisi1Trap"
+                                            placeholder="masukan disini..." />
+                                    </div>
+                                    <div class="col-md-6 col-sm-6">
+                                        <label class="width100">Masukan nilai sisi kanan :</label>
+                                        <br />
+                                        <input class="width100" type="tel" id="nilaiSisi2Trap"
+                                            placeholder="masukan disini..." />
+                                    </div>
+                                    <div class="col-md-6 col-sm-6">
+                                        <label class="width100">Masukan nilai sisi bawah :</label>
+                                        <br />
+                                        <input class="width100" type="tel" id="nilaiSisi3Trap"
+                                            placeholder="masukan disini..." />
+                                    </div>
+                                    <div class="col-md-6 col-sm-6">
+                                        <label class="width100">Masukan nilai sisi kiri :</label>
+                                        <br />
+                                        <input class="width100" type="tel" id="nilaiSisi4Trap"
+                                            placeholder="masukan disini..." />
+                                    </div>
+                                    <div class="col-md-12 col-sm-12">
+                                        <label class="width100">Masukan nilai tinggi :</label>
+                                        <br />
+                                        <input class="width100" type="tel" id="nilaiTingTrap"
+                                            placeholder="masukan disini..." />
+                                    </div>
+                                </div>
+
+                                <!-- tampungan nilai layang - layang -->
+                                <div class="row my-2" id="inpNilaiLayaLaya">
+                                    <div class="col-md-6 col-sm-6">
+                                        <label class="width100">Masukan nilai sisi kanan :</label>
+                                        <br />
+                                        <input class="width100" type="tel" id="nilaiSisiKanaLayaLaya"
+                                            placeholder="masukan disini..." />
+                                    </div>
+                                    <div class="col-md-6 col-sm-6">
+                                        <label class="width100">Masukan nilai sisi kiri :</label>
+                                        <br />
+                                        <input class="width100" type="tel" id="nilaiSisiKiriLayaLaya"
+                                            placeholder="masukan disini..." />
+                                    </div>
+                                    <div class="col-md-6 col-sm-6">
+                                        <label class="width100">Masukan nilai diagonal 1 :</label>
+                                        <br />
+                                        <input class="width100" type="tel" id="nilaiSisiDia1LayaLaya"
+                                            placeholder="masukan disini..." />
+                                    </div>
+                                    <div class="col-md-6 col-sm-6">
+                                        <label class="width100">Masukan nilai diagonal 2 :</label>
+                                        <br />
+                                        <input class="width100" type="tel" id="nilaiSisiDiag2LayaLaya"
+                                            placeholder="masukan disini..." />
+                                    </div>
+                                </div>
+                                <!-- end -->
+
+                                <div class="row my-2">
+                                    <div class="col-md-6 col-sm-6 my-1">
+                                        <button onclick="getHasil()"
+                                            class="btn-primary btn-sm btn-custom btn width100">Submit</button>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 my-1">
+                                        <button onclick="resetHasil()"
+                                            class="btn-danger btn-sm btn-custom btn width100">Reset</button>
+                                    </div>
+                                </div>
+                                <div class="row my-2">
+                                    <div class="col-md-6 col-sm-6">
+                                        <label class="width100">
+                                            Hasil Keliling :
+                                        </label>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6">
+                                        <input class="width100" readonly type="tel" id="hasilKeli" />
+                                    </div>
+                                </div>
+                                <div class="row my-2">
+                                    <div class="col-md-6 col-sm-6">
+                                        <label class="width100">
+                                            Hasil Luas :
+                                        </label>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6">
+                                        <input class="width100" readonly type="tel" id="hasilLuas" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12">
+                                        <p class="small"><strong>Catatan</strong> : Semua hasil dalam satuan cm&#178;
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <footer class="row justify-content-center">
+                    <div class="footer">
+                        made by bangef
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
