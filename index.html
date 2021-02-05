@@ -3,7 +3,8 @@
     padding kanan masih ngaco (clear), 
     reset btn tidak work lagi (clear),
     submit btn error (clear),
-    menu inputNilai() error ,
+    menu inputNilai() error (clear),
+    select inpMenu() error,
 -->
 <!DOCTYPE html>
 <html lang="id">
@@ -24,9 +25,9 @@
             style="border: 2px solid #ddd;">
             <!-- wrapper ketiga -->
             <div class="col-11">
-                <h2 class="text-center font-weight-bold">Kalkulator Bangun Datar</h2>
+                <h3 class="text-center font-weight-bold my-1">Kalkulator Bangun Datar</h3>
                 <hr />
-                <h4 class="font-weight-bold">Pengertian Bangun Datar</h4>
+                <h4 class="font-weight-bold ">Pengertian Bangun Datar</h4>
                 <div id="show" style="display: block;">
                     <button onclick="show()" class="my-2 btn btn-primary btn-sm">Tampilkan</button>
                 </div>
@@ -34,9 +35,7 @@
                     <button onclick="hide()" class="my-2 btn btn-danger btn-sm">Tutup</button>
                     <p>
                         Bangun Datar merupakan suatu bidang datar atau plane geometry yang terbentuk melalui titik atau
-                        garis hingga membangun 2 dimensi dan memiliki rumus luas dan keliling. -
-                        <a target="_blank"
-                            href="https://www.suara.com/tekno/2020/12/03/174940/kumpulan-rumus-jenis-dan-pengertian-bangun-datar?page=all">suara.com</a>.
+                        garis hingga membangun 2 dimensi dan memiliki rumus luas dan keliling.
                     </p>
                 </div>
 
@@ -56,7 +55,7 @@
                     <div id="ket" class="row my-2">
                         <div class="col" id="peng">
                             <!-- tampungan pengertian()-->
-                            <h5 class="font-weight-bold">
+                            <h5 class="font-weight-bold ">
                                 Persegi
                             </h5>
                             <p>
@@ -91,7 +90,7 @@
                                     </div>
                                 </div>
                                 <!-- tampungan nilai persegi -->
-                                <div class="row my-2" id="inpNilaiPers">
+                                <div class="row my-2" id="inpNilaiPers" style="display: block;">
                                     <div class="col-md-12 col-sm-12">
                                         <label class="width100">
                                             Masukan niali sisi :
@@ -102,7 +101,7 @@
                                     </div>
                                 </div>
                                 <!-- tampungan nilai persegi panjang -->
-                                <div class="row my-2" id="inpNilaiPersPanj">
+                                <div class="row my-2" id="inpNilaiPersPanj" style="display: none;">
                                     <div class="col-md-12 col-sm-12">
                                         <label class="width100">Masukan nilai panjang :</label>
                                         <br />
@@ -117,7 +116,7 @@
                                     </div>
                                 </div>
                                 <!-- tampungan nilai segitiga -->
-                                <div class="row my-2" id="inpNilaiSegi">
+                                <div class="row my-2" id="inpNilaiSegi" style="display: none;">
                                     <div class="col-md-12 col-sm-12">
                                         <label class="width100">Masukan nilai sisi :</label>
                                         <br />
@@ -139,7 +138,7 @@
                                 </div>
 
                                 <!-- tampungan nilai lingkaran -->
-                                <div class="row my-2" id="inpNilaiLing">
+                                <div class="row my-2" id="inpNilaiLing" style="display: none;">
                                     <div class="col-md-12 col-sm-12">
                                         <select id="nilaiROrDLing" class="width100 my-2">
                                             <option value="null" disabled selected>
@@ -155,7 +154,7 @@
                                 </div>
 
                                 <!-- tampungan nilai jajar genjang -->
-                                <div class="row my-2" id="inpNilaiJajaGenj">
+                                <div class="row my-2" id="inpNilaiJajaGenj" style="display: none;">
                                     <div class="col-md-12 col-sm-12">
                                         <label class="width100">Masukan nilai alas :</label>
                                         <br />
@@ -177,7 +176,7 @@
                                 </div>
 
                                 <!-- tampungan nilai belah ketupat -->
-                                <div class="row my-2" id="inpNilaiBelaKetu">
+                                <div class="row my-2" id="inpNilaiBelaKetu" style="display: none;">
                                     <div class="col-md-12 col-sm-12">
                                         <label class="width100">Masukan nilai sisi :</label>
                                         <br />
@@ -199,26 +198,26 @@
                                 </div>
 
                                 <!-- tampungan nilai trapesium -->
-                                <div class="row my-2" id="inpNilaiTrap">
-                                    <div class="col-md-6 col-sm-6">
+                                <div class="row my-2" id="inpNilaiTrap" style="display: none;">
+                                    <div class="col-md-12 col-sm-12">
                                         <label class="width100">Masukan nilai sisi atas :</label>
                                         <br />
                                         <input class="width100" type="tel" id="nilaiSisi1Trap"
                                             placeholder="masukan disini..." />
                                     </div>
-                                    <div class="col-md-6 col-sm-6">
+                                    <div class="col-md-12 col-sm-12">
                                         <label class="width100">Masukan nilai sisi kanan :</label>
                                         <br />
                                         <input class="width100" type="tel" id="nilaiSisi2Trap"
                                             placeholder="masukan disini..." />
                                     </div>
-                                    <div class="col-md-6 col-sm-6">
+                                    <div class="col-md-12 col-sm-12">
                                         <label class="width100">Masukan nilai sisi bawah :</label>
                                         <br />
                                         <input class="width100" type="tel" id="nilaiSisi3Trap"
                                             placeholder="masukan disini..." />
                                     </div>
-                                    <div class="col-md-6 col-sm-6">
+                                    <div class="col-md-12 col-sm-12">
                                         <label class="width100">Masukan nilai sisi kiri :</label>
                                         <br />
                                         <input class="width100" type="tel" id="nilaiSisi4Trap"
@@ -233,27 +232,26 @@
                                 </div>
 
                                 <!-- tampungan nilai layang - layang -->
-                                <div class="row my-2" id="inpNilaiLayaLaya">
-                                    <div class="col-md-6 col-sm-6">
-                                        <label class="width100">Masukan nilai sisi kanan :</label>
-                                        <br />
+                                <div class="row my-2" id="inpNilaiLayaLaya" style="display: none;">
+                                    <div class="col-md-12 col-sm-12">
+                                        <label>Masukan nilai sisi kanan :</label>
                                         <input class="width100" type="tel" id="nilaiSisiKanaLayaLaya"
                                             placeholder="masukan disini..." />
                                     </div>
-                                    <div class="col-md-6 col-sm-6">
-                                        <label class="width100">Masukan nilai sisi kiri :</label>
+                                    <div class="col-md-12 col-sm-12">
+                                        <label>Masukan nilai sisi kiri :</label>
                                         <br />
                                         <input class="width100" type="tel" id="nilaiSisiKiriLayaLaya"
                                             placeholder="masukan disini..." />
                                     </div>
-                                    <div class="col-md-6 col-sm-6">
-                                        <label class="width100">Masukan nilai diagonal 1 :</label>
+                                    <div class="col-md-12 col-sm-12">
+                                        <label>Masukan nilai diagonal 1 :</label>
                                         <br />
                                         <input class="width100" type="tel" id="nilaiSisiDia1LayaLaya"
                                             placeholder="masukan disini..." />
                                     </div>
-                                    <div class="col-md-6 col-sm-6">
-                                        <label class="width100">Masukan nilai diagonal 2 :</label>
+                                    <div class="col-md-12 col-sm-12">
+                                        <label>Masukan nilai diagonal 2 :</label>
                                         <br />
                                         <input class="width100" type="tel" id="nilaiSisiDiag2LayaLaya"
                                             placeholder="masukan disini..." />

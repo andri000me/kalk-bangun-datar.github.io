@@ -26,7 +26,7 @@ function hide() {
 // main menu
 function inpMenu() {
     var inpMenu = document.getElementById('inpMenu').value;
-    if (inpMenu === null) {
+    if (inpMenu === undefined) {
         inpMenu = 'pers';
     }
 
@@ -86,6 +86,12 @@ function inpMenu() {
             Layang-layang merupakan turunan dari segi empat yang mempunyai ciri khusus dua sisi yang membentuk sudut sama panjang dan besaran sudut yang saling berhadapan sama besar. `);
             imagePath(`./img/Layang -  layang.png`);
             inpRumus(`2 * (sisi kanan + sisi kiri)`, `Diagonal1 * diagonal2 / 2`);
+            inputNilai(inpMenu);
+            break;
+        default:
+            pengertian(`Persegi`, `Persegi adalah bangun datar dua dimensi yang dibentuk oleh empat buah rusuk ( a ) yang sama panjang dan memiliki empat buah sudut yang kesemuanya adalah sudut siku-siku. Bangun ini disebut juga sebagai <strong>bujur sangkar</strong>.`);
+            imagePath(`./img/Persegi.png`);
+            inpRumus(`Sisi * 4 atau 4(Sisi)`, `Sisi * sisi`);
             inputNilai(inpMenu);
             break;
     }
@@ -191,7 +197,7 @@ function inputNilai(a) {
             e.style.display = 'none';
             f.style.display = 'none';
             g.style.display = 'none';
-            h.style.display = 'blok';
+            h.style.display = 'block';
             i.style.display = 'none';
             break;
 
@@ -203,10 +209,18 @@ function inputNilai(a) {
             f.style.display = 'none';
             g.style.display = 'none';
             h.style.display = 'none';
-            i.style.display = 'blok';
+            i.style.display = 'block';
             break;
 
         default:
+            b.style.display = 'block';
+            c.style.display = 'none';
+            d.style.display = 'none';
+            e.style.display = 'none';
+            f.style.display = 'none';
+            g.style.display = 'none';
+            h.style.display = 'none';
+            i.style.display = 'none';
             break;
     }
 }
