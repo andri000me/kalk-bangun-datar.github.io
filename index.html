@@ -41,7 +41,7 @@
 
                 <div class="form-group">
                     <!-- pilihan menu -->
-                    <select class="my-2" onclick="inpMenu()" id="inpMenu">
+                    <select class="my-2" onchange="inpMenu()" id="inpMenu">
                         <option selected value="pers">Persegi</option>
                         <option value="persPanj">Persegi Panjang</option>
                         <option value="segi">Segitiga</option>
@@ -66,7 +66,7 @@
                         </div>
                         <div class="col" id="gmbr">
                             <!-- tampungan imagePath()-->
-                            <div class="d-flex justify-content-center"><img src="./img/Persegi.png"
+                            <div class="d-flex justify-content-center"><img src="https://upload.wikimedia.org/wikipedia/id/2/2d/Persegi.JPG"
                                     alt="gambar bangun datar">
                             </div>
                         </div>
@@ -79,13 +79,13 @@
                                     <div class="col-md-6 col-sm-6">
                                         <p id="ketRumusKeli">
                                             <!-- tampungan inpRumus()-->
-                                            <span class="font-weight-bold">Keliling</span> Sisi * 4 atau 4(Sisi)
+                                            <span class="font-weight-bold">Keliling</span> = Sisi * 4 atau 4(Sisi)
                                         </p>
                                     </div>
                                     <div class="col-md-6 col-sm-6">
                                         <p id="ketRumusLuas">
                                             <!-- tampungan inpRumus()-->
-                                            <span class="font-weight-bold">Luas</span> Sisi * sisi
+                                            <span class="font-weight-bold">Luas</span> = Sisi * sisi
                                         </p>
                                     </div>
                                 </div>
@@ -96,7 +96,7 @@
                                             Masukan niali sisi :
                                         </label>
                                         <br>
-                                        <input type="tel" class="width100" id="nilaiSisiPers"
+                                        <input required type="tel" class="width100" id="nilaiSisiPers"
                                             placeholder="Masukan disini..." />
                                     </div>
                                 </div>
@@ -105,13 +105,13 @@
                                     <div class="col-md-12 col-sm-12">
                                         <label class="width100">Masukan nilai panjang :</label>
                                         <br />
-                                        <input class="width100" type="tel" id="nilaiPanjPersPanj"
+                                        <input required class="width100" type="tel" id="nilaiPanjPersPanj"
                                             placeholder="masukan disini..." />
                                     </div>
                                     <div class="col-md-12 col-sm-12">
                                         <label class="width100">Masukan nilai lebar :</label>
                                         <br />
-                                        <input class="width100" type="tel" id="nilaiLebaPersPanj"
+                                        <input required class="width100" type="tel" id="nilaiLebaPersPanj"
                                             placeholder="masukan disini..." />
                                     </div>
                                 </div>
@@ -120,19 +120,19 @@
                                     <div class="col-md-12 col-sm-12">
                                         <label class="width100">Masukan nilai sisi :</label>
                                         <br />
-                                        <input class="width100" type="tel" id="nilaiSisiSegi"
+                                        <input required class="width100" type="tel" id="nilaiSisiSegi"
                                             placeholder="masukan disini..." />
                                     </div>
                                     <div class="col-md-12 col-sm-12">
                                         <label class="width100">Masukan nilai alas :</label>
                                         <br />
-                                        <input class="width100" type="tel" id="nilaiAlasSegi"
+                                        <input required class="width100" type="tel" id="nilaiAlasSegi"
                                             placeholder="masukan disini..." />
                                     </div>
                                     <div class="col-md-12 col-sm-12">
                                         <label class="width100">Masukan nilai tinggi :</label>
                                         <br />
-                                        <input class="width100" type="tel" id="nilaiTingSegi"
+                                        <input required class="width100" type="tel" id="nilaiTingSegi"
                                             placeholder="masukan disini..." />
                                     </div>
                                 </div>
@@ -148,7 +148,7 @@
                                             <option value="r">Jari - jari</option>
                                         </select>
                                         <br />
-                                        <input class="width100" type="tel" id="nilaiLing"
+                                        <input required class="width100" type="tel" id="nilaiLing"
                                             placeholder="masukan disini..." />
                                     </div>
                                 </div>
@@ -158,19 +158,19 @@
                                     <div class="col-md-12 col-sm-12">
                                         <label class="width100">Masukan nilai alas :</label>
                                         <br />
-                                        <input class="width100" type="tel" id="nilaiAlasJajaGenj"
+                                        <input required class="width100" type="tel" id="nilaiAlasJajaGenj"
                                             placeholder="masukan disini..." />
                                     </div>
                                     <div class="col-md-12 col-sm-12">
                                         <label class="width100">Masukan nilai sisi miring :</label>
                                         <br />
-                                        <input class="width100" type="tel" id="nilaiSmJajaGenj"
+                                        <input required class="width100" type="tel" id="nilaiSmJajaGenj"
                                             placeholder="masukan disini..." />
                                     </div>
                                     <div class="col-md-12 col-sm-12">
                                         <label class="width100">Masukan nilai tinggi :</label>
                                         <br />
-                                        <input class="width100" type="tel" id="nilaiTingJajaGenj"
+                                        <input required class="width100" type="tel" id="nilaiTingJajaGenj"
                                             placeholder="masukan disini..." />
                                     </div>
                                 </div>
@@ -180,19 +180,19 @@
                                     <div class="col-md-12 col-sm-12">
                                         <label class="width100">Masukan nilai sisi :</label>
                                         <br />
-                                        <input class="width100" type="tel" id="nilaiSisiBelaKetu"
+                                        <input required class="width100" type="tel" id="nilaiSisiBelaKetu"
                                             placeholder="masukan disini..." />
                                     </div>
                                     <div class="col-md-12 col-sm-12">
                                         <label class="width100">Masukan nilai diagonal 1 :</label>
                                         <br />
-                                        <input class="width100" type="tel" id="nilaiDia1BelaKetu"
+                                        <input required class="width100" type="tel" id="nilaiDia1BelaKetu"
                                             placeholder="masukan disini..." />
                                     </div>
                                     <div class="col-md-12 col-sm-12">
                                         <label class="width100">Masukan nilai diagonal 2 :</label>
                                         <br />
-                                        <input class="width100" type="tel" id="nilaiDia2BelaKetu"
+                                        <input required class="width100" type="tel" id="nilaiDia2BelaKetu"
                                             placeholder="masukan disini..." />
                                     </div>
                                 </div>
@@ -202,31 +202,31 @@
                                     <div class="col-md-12 col-sm-12">
                                         <label class="width100">Masukan nilai sisi atas :</label>
                                         <br />
-                                        <input class="width100" type="tel" id="nilaiSisi1Trap"
+                                        <input required class="width100" type="tel" id="nilaiSisi1Trap"
                                             placeholder="masukan disini..." />
                                     </div>
                                     <div class="col-md-12 col-sm-12">
                                         <label class="width100">Masukan nilai sisi kanan :</label>
                                         <br />
-                                        <input class="width100" type="tel" id="nilaiSisi2Trap"
+                                        <input required class="width100" type="tel" id="nilaiSisi2Trap"
                                             placeholder="masukan disini..." />
                                     </div>
                                     <div class="col-md-12 col-sm-12">
                                         <label class="width100">Masukan nilai sisi bawah :</label>
                                         <br />
-                                        <input class="width100" type="tel" id="nilaiSisi3Trap"
+                                        <input required class="width100" type="tel" id="nilaiSisi3Trap"
                                             placeholder="masukan disini..." />
                                     </div>
                                     <div class="col-md-12 col-sm-12">
                                         <label class="width100">Masukan nilai sisi kiri :</label>
                                         <br />
-                                        <input class="width100" type="tel" id="nilaiSisi4Trap"
+                                        <input required class="width100" type="tel" id="nilaiSisi4Trap"
                                             placeholder="masukan disini..." />
                                     </div>
                                     <div class="col-md-12 col-sm-12">
                                         <label class="width100">Masukan nilai tinggi :</label>
                                         <br />
-                                        <input class="width100" type="tel" id="nilaiTingTrap"
+                                        <input required class="width100" type="tel" id="nilaiTingTrap"
                                             placeholder="masukan disini..." />
                                     </div>
                                 </div>
@@ -235,25 +235,25 @@
                                 <div class="row my-2" id="inpNilaiLayaLaya" style="display: none;">
                                     <div class="col-md-12 col-sm-12">
                                         <label>Masukan nilai sisi kanan :</label>
-                                        <input class="width100" type="tel" id="nilaiSisiKanaLayaLaya"
+                                        <input required class="width100" type="tel" id="nilaiSisiKanaLayaLaya"
                                             placeholder="masukan disini..." />
                                     </div>
                                     <div class="col-md-12 col-sm-12">
                                         <label>Masukan nilai sisi kiri :</label>
                                         <br />
-                                        <input class="width100" type="tel" id="nilaiSisiKiriLayaLaya"
+                                        <input required class="width100" type="tel" id="nilaiSisiKiriLayaLaya"
                                             placeholder="masukan disini..." />
                                     </div>
                                     <div class="col-md-12 col-sm-12">
                                         <label>Masukan nilai diagonal 1 :</label>
                                         <br />
-                                        <input class="width100" type="tel" id="nilaiSisiDia1LayaLaya"
+                                        <input required class="width100" type="tel" id="nilaiSisiDiag1LayaLaya"
                                             placeholder="masukan disini..." />
                                     </div>
                                     <div class="col-md-12 col-sm-12">
                                         <label>Masukan nilai diagonal 2 :</label>
                                         <br />
-                                        <input class="width100" type="tel" id="nilaiSisiDiag2LayaLaya"
+                                        <input required class="width100" type="tel" id="nilaiSisiDiag2LayaLaya"
                                             placeholder="masukan disini..." />
                                     </div>
                                 </div>

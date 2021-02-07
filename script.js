@@ -26,33 +26,29 @@ function hide() {
 // main menu
 function inpMenu() {
     var inpMenu = document.getElementById('inpMenu').value;
-    if (inpMenu === undefined) {
-        inpMenu = 'pers';
-    }
-
     switch (inpMenu) {
         case 'pers':
             pengertian(`Persegi`, `Persegi adalah bangun datar dua dimensi yang dibentuk oleh empat buah rusuk ( a ) yang sama panjang dan memiliki empat buah sudut yang kesemuanya adalah sudut siku-siku. Bangun ini disebut juga sebagai <strong>bujur sangkar</strong>.`);
-            imagePath(`./img/Persegi.png`);
+            imagePath(`https://upload.wikimedia.org/wikipedia/id/2/2d/Persegi.JPG`);
             inpRumus(`Sisi * 4 atau 4(Sisi)`, `Sisi * sisi`);
             inputNilai(inpMenu);
             break;
         case 'persPanj':
             pengertian(`Persegi Panjang`, `Persegi panjang adalah bangun datar dua dimensi yang dibentuk oleh dua pasang sisi yang masing-masing sama panjang dan sejajar dengan pasangannya, dan memiliki empat buah sudut yang kesemuanya adalah sudut siku-siku. Persegi panjang merupakan turunan dari segi empat yang mempunyai ciri khusus dua sisi sejajar sama panjang dan keempat sudutnya siku-siku (90°).\n
             Rusuk terpanjang disebut sebagai panjang ( p ) dan rusuk terpendek disebut sebagai lebar ( l ).`);
-            imagePath(`./img/Persegi Panjang.png`);
+            imagePath(`https://upload.wikimedia.org/wikipedia/id/b/b2/Persegi_panjang.JPG`);
             inpRumus('2 * ( panjang + lebar)', `panjang * lebar`);
             inputNilai(inpMenu);
             break;
         case 'segi':
             pengertian(`Segitiga`, `Sebuah segitiga adalah poligon dengan tiga ujung dan tiga simpul. Ini adalah salah satu bentuk dasar dalam geometri.`);
-            imagePath(`./img/Segitiga.png`);
+            imagePath(`https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Equilateral-triangle-heights.svg/450px-Equilateral-triangle-heights.svg.png`);
             inpRumus('Sisi * 3 atau 3(sisi)', `1/2 * alas * tinggi`);
             inputNilai(inpMenu);
             break;
         case 'ling':
             pengertian(`Lingkaran`, `Lingkaran adalah bentuk yang terdiri dari semua titik dalam bidang yang berjarak tertentu dari titik tertentu, pusat; ekuivalennya adalah kurva yang dilacak oleh titik yang bergerak dalam bidang sehingga jaraknya dari titik tertentu adalah konstan. Jarak antara titik mana pun dari lingkaran dan pusat disebut jari-jari. Artikel ini adalah tentang lingkaran dalam geometri Euclidean, dan, khususnya, bidang Euclidean, kecuali jika dinyatakan sebaliknya.`);
-            imagePath(`./img/Lingkaran.png`);
+            imagePath(`https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Circle-withsegments.svg/330px-Circle-withsegments.svg.png`);
             inpRumus('2 * phi * jari-jari atau phi * diameter', `Phi * jari-jari * jari-jari`);
             inputNilai(inpMenu);
             break;
@@ -62,7 +58,7 @@ function inpMenu() {
             Jajar genjang termasuk turunan segiempat yang mempunyai ciri khusus.
             
             Jajar genjang dengan empat rusuk yang sama panjang disebut belah ketupat. `);
-            imagePath(`./img/Jajar Genjang.png`);
+            imagePath(`https://upload.wikimedia.org/wikipedia/id/9/90/Jajaran_genjang.JPG`);
             inpRumus(`2 * (alas + sisi miring)`, `Alas * tinggi`);
             inputNilai(inpMenu);
             break;
@@ -76,7 +72,7 @@ function inpMenu() {
             pengertian(`Trapesium`, `Trapesium adalah bangun datar dua dimensi yang dibentuk oleh empat buah rusuk yang dua di antaranya saling sejajar namun tidak sama panjang.
 
             Trapesium termasuk jenis bangun datar segi empat yang mempunyai ciri khusus.`);
-            imagePath(`./img/Trapesium.png`);
+            imagePath(`https://upload.wikimedia.org/wikipedia/id/1/18/Trapesium.JPG`);
             inpRumus(`Sisi atas + sisi kanan + sisi bawah + sisi kiri`, `(Sisi atas + sisi bawah) * t / 2`);
             inputNilai(inpMenu);
             break;
@@ -84,13 +80,13 @@ function inpMenu() {
             pengertian(`Layang - Layang`, `Layang-layang adalah bangun datar (bangun berdimensi dua) yang dibentuk oleh dua pasang sisi yang masing-masing pasangannya sama panjang dan saling membentuk sudut.
 
             Layang-layang merupakan turunan dari segi empat yang mempunyai ciri khusus dua sisi yang membentuk sudut sama panjang dan besaran sudut yang saling berhadapan sama besar. `);
-            imagePath(`./img/Layang -  layang.png`);
+            imagePath(`https://upload.wikimedia.org/wikipedia/id/5/5a/Layang.JPG`);
             inpRumus(`2 * (sisi kanan + sisi kiri)`, `Diagonal1 * diagonal2 / 2`);
             inputNilai(inpMenu);
             break;
         default:
             pengertian(`Persegi`, `Persegi adalah bangun datar dua dimensi yang dibentuk oleh empat buah rusuk ( a ) yang sama panjang dan memiliki empat buah sudut yang kesemuanya adalah sudut siku-siku. Bangun ini disebut juga sebagai <strong>bujur sangkar</strong>.`);
-            imagePath(`./img/Persegi.png`);
+            imagePath(`https://upload.wikimedia.org/wikipedia/id/2/2d/Persegi.JPG`);
             inpRumus(`Sisi * 4 atau 4(Sisi)`, `Sisi * sisi`);
             inputNilai(inpMenu);
             break;
@@ -227,57 +223,60 @@ function inputNilai(a) {
 
 // Rumus : input hasil.
 function getHasil() {
+    var hasilKeli = document.getElementById('hasilKeli');
+    var hasilLuas = document.getElementById('hasilLuas');
+    
     if (inpMenu() === 'pers') {
-        a = document.getElementById('nilaiSisiPers').value;
+        a = parseFloat(document.getElementById('nilaiSisiPers').value);
 
-        return document.getElementById('hasilKeli').value = parseFloat(a * 4), document.getElementById('hasilLuas').value = parseFloat(a * a);
+        return parseFloat(hasilKeli.value = a * 4, hasilLuas.value = a * a);
     } else if (inpMenu() === 'persPanj') {
-        a = document.getElementById('nilaiPanjPersPanj').value;
-        b = document.getElementById('nilaiLebaPersPanj').value;
+        a = parseFloat(document.getElementById('nilaiPanjPersPanj').value);
+        b = parseFloat(document.getElementById('nilaiLebaPersPanj').value);
 
-        return console.log(document.getElementById('hasilKeli').value = parseFloat(2 * (a + b)), document.getElementById('hasilLuas').value = parseFloat(a * b));
+        return parseFloat(hasilKeli.value = (a * 2) + (b * 2), hasilLuas.value = a * b);
     } else if (inpMenu() === 'segi') {
-        a = document.getElementById('nilaiSisiSegi').value;
-        b = document.getElementById('nilaiAlasSegi').value;
-        c = document.getElementById('nilaiTingSegi').value;
+        a = parseFloat(document.getElementById('nilaiSisiSegi').value);
+        b = parseFloat(document.getElementById('nilaiAlasSegi').value);
+        c = parseFloat(document.getElementById('nilaiTingSegi').value);
 
-        return console.log(document.getElementById('hasilKeli').value = parseFloat(a * 3), document.getElementById('hasilLuas').value = parseFloat(b * c / 2));
+        return parseFloat(hasilKeli.value = a * 3, hasilLuas.value = b * c / 2);
     } else if (inpMenu() === 'ling') {
         a = document.getElementById('nilaiROrDLing').value;
-        b = document.getElementById('nilaiLing').value;
+        b = parseFloat(document.getElementById('nilaiLing').value);
 
         if (a === 'd') {
-            return console.log(document.getElementById('hasilKeli').value = parseFloat(3.14 * b)), console.log(document.getElementById('hasilLuas').value = parseFloat(3.14 * Math.sqrt(b)));
+            return parseFloat(hasilKeli.value = Math.PI * b, hasilLuas.value = Math.PI * Math.pow(b/2, 2));
         } else {
-            return console.log(document.getElementById('hasilKeli').value = parseFloat(2 * 3.14 * b * b)), console.log(document.getElementById('hasilLuas').value = parseFloat(3.14 * b * b));
+            return parseFloat(hasilKeli.value = 2 * Math.PI * b, hasilLuas.value = Math.PI * Math.pow(b, 2));
         }
     } else if (inpMenu() === 'jajaGenj') {
-        a = document.getElementById('nilaiAlasJajaGenj').value;
-        b = document.getElementById('nilaiSmJajaGenj').value;
-        c = document.getElementById('nilaiTingJajaGenj').value;
+        a = parseFloat(document.getElementById('nilaiAlasJajaGenj').value);
+        b = parseFloat(document.getElementById('nilaiSmJajaGenj').value);
+        c = parseFloat(document.getElementById('nilaiTingJajaGenj').value);
 
-        return console.log(document.getElementById('hasilKeli').value = parseFloat(2 * (a + b)), document.getElementById('hasilLuas').value = parseFloat(b * c / 2));
+        return parseFloat(hasilKeli.value = 2 * (a + b),hasilLuas.value = b * c / 2);
     } else if (inpMenu() === 'belaKetu') {
-        a = document.getElementById('nilaiSisiBelaKetu').value;
-        b = document.getElementById('nilaiDia1BelaKetu').value;
-        c = document.getElementById('nilaiDia2BelaKetu').value;
+        a = parseFloat(document.getElementById('nilaiSisiBelaKetu').value);
+        b = parseFloat(document.getElementById('nilaiDia1BelaKetu').value);
+        c = parseFloat(document.getElementById('nilaiDia2BelaKetu').value);
 
-        return console.log(document.getElementById('hasilKeli').value = parseFloat(4 * a), document.getElementById('hasilLuas').value = parseFloat((a * b) / 2));
+        return parseFloat(hasilKeli.value = 4 * a, hasilLuas.value = a * b / 2);
     } else if (inpMenu() === 'trap') {
-        a = document.getElementById('nilaiSisi1Trap').value;
-        b = document.getElementById('nilaiSisi2Trap').value;
-        c = document.getElementById('nilaiSisi3Trap').value;
-        d = document.getElementById('nilaiSisi4Trap').value;
-        e = document.getElementById('nilaiTingTrap').value;
+        a = parseFloat(document.getElementById('nilaiSisi1Trap').value);
+        b = parseFloat(document.getElementById('nilaiSisi2Trap').value);
+        c = parseFloat(document.getElementById('nilaiSisi3Trap').value);
+        d = parseFloat(document.getElementById('nilaiSisi4Trap').value);
+        e = parseFloat(document.getElementById('nilaiTingTrap').value);
 
-        return console.log(document.getElementById('hasilKeli').value = parseFloat(a + b + c + d), document.getElementById('hasilLuas').value = parseFloat((a + c) * e / 2));
-    } else if (inpMenu() === 'layaLaya') {
-        a = document.getElementById('nilaiSisiKanaLayaLaya').value;
-        b = document.getElementById('nilaiSisiKiriLayaLaya').value;
-        c = document.getElementById('nilaiSisiDia1LayaLaya').value;
-        d = document.getElementById('nilaiSisiDia2LayaLaya').value;
+        return parseFloat(hasilKeli.value = a + b + c + d, hasilLuas.value = (a + c) * e / 2);
+    } else if(inpMenu() === 'layaLaya') {
+        a = parseFloat(document.getElementById('nilaiSisiKanaLayaLaya').value);
+        b = parseFloat(document.getElementById('nilaiSisiKiriLayaLaya').value);
+        c = parseFloat(document.getElementById('nilaiSisiDiag1LayaLaya').value);
+        d = parseFloat(document.getElementById('nilaiSisiDiag2LayaLaya').value);
 
-        return console.log(document.getElementById('hasilKeli').value = parseFloat(2 * (a + b)), document.getElementById('hasilLuas').value = parseFloat((c * d) / 2));
+        return parseFloat(hasilKeli.value = 2 * (a + b), hasilLuas.value = c * d / 2);
     }
 }
 
@@ -305,345 +304,8 @@ function resetHasil() {
                 document.getElementById('nilaiSisi4Trap').value = null,
                 document.getElementById('nilaiTingTrap').value = null;
         } else if (inpMenu() === 'layaLaya') {
+            return document.getElementById('nilaiSisiKanaLayaLaya').value = null,
+            document.getElementById('nilaiSisiKiriLayaLaya').value = null, document.getElementById('nilaiSisiDiag1LayaLaya').value = null, document.getElementById('nilaiSisiDiag2LayaLaya').value = null;
         }
     }
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-var cntrl = true;
-while (cntrl === true) {
-    var inp = parseInt(prompt('Kalkulator Bangun Datar\nPilih menu :\n1.Persegi.\n2. Persegi Panjang.\n3. Segitiga.\n4. Lingkaran.\n5. Jajar Genjang.\n6. Belah Ketupat.\n7. Trapesium.\n8. Layang - Layang.\n9. Keluar.'));
-    var inp2, inp3, inp4, inp5, inp6;
-    switch (inp) {
-        // case persegi
-        case 1:
-            while (cntrl === true) {
-                inp2 = parseInt(prompt('Pilih menu :\n1. Keliling\n2. Luas\n3. Keluar.'));
-                switch (inp2) {
-                    case 1:
-                        inp3 = parseFloat(prompt('KELILING PERSEGI\nMasukan nilai sisi'));
-                        kelilingPersegi(inp3);
-                        break;
-                    case 2:
-                        inp3 = parseFloat(prompt('LUAS PERSEGI\nMasukan nilai sisi'));
-                        luasPersegi(inp3);
-                        break;
-                    case 3:
-                        cntrl = confirm('Apakah anda yakin, ingin keluar ?');
-                        cntrl = (cntrl === true) ? false : true;
-                        break;
-                    default:
-                        alert('Anda memasukan menu yang salah!')
-                        break;
-                }
-            }
-            break;
-        // case persegi panjang
-        case 2:
-            while (cntrl === true) {
-                inp2 = parseInt(prompt('Pilih menu :\n1. Keliling\n2. Luas.\n3. Keluar.'));
-                switch (inp2) {
-                    case 1:
-                        inp3 = parseFloat(prompt('KELILING PERSEGI PANJANG\nMasukan nilai panjang'));
-                        inp4 = parseFloat(prompt('KELILING PERSEGI PANJANG\nMasukan nilai lebar'));
-                        kelilingPersegiPanjang(inp3, inp4);
-                        break;
-                    case 2:
-                        inp3 = parseFloat(prompt('LUAS PERSEGI PANJANG\nMasukan nilai panjang'));
-                        inp4 = parseFloat(prompt('LUAS PERSEGI PANJANG\nMasukan nilai lebar'));
-                        luasPersegiPanjang(inp3, inp4);
-                        break;
-                    case 3:
-                        cntrl = confirm('Apakah anda yakin, ingin keluar ?');
-                        cntrl = (cntrl === true) ? false : true;
-                        break;
-                    default:
-                        alert('Anda memasukan menu yang salah!')
-                        break;
-                }
-            }
-            break;
-        // case segitiga
-        case 3:
-            while (cntrl === true) {
-                inp2 = parseInt(prompt('Pilih menu :\n1. Keliling\n2. Luas.\n3. Keluar.'));
-                switch (inp2) {
-                    case 1:
-                        inp3 = parseFloat(prompt('KELILING SEGITIGA\nMasukan nilai sisi'));
-                        kelilingSegitiga(inp3);
-                        break;
-                    case 2:
-                        inp3 = parseFloat(prompt('LUAS SEGITIGA\nMasukan nilai alas'));
-                        inp4 = parseFloat(prompt('LUAS SEGITIGA\nMasukan nilai tinggi'));
-                        luasSegitiga(inp3, inp4);
-                        break;
-                    case 3:
-                        cntrl = confirm('Apakah anda yakin, ingin keluar ?');
-                        cntrl = (cntrl === true) ? false : true;
-                        break;
-                    default:
-                        alert('Anda memasukan menu yang salah!')
-                        break;
-                }
-            }
-            break;
-        // case lingkaran
-        case 4:
-            while (cntrl === true) {
-                inp2 = parseInt(prompt('Pilih menu :\n1. Keliling\n2. Luas.\n3. Keluar.'));
-                switch (inp2) {
-                    case 1:
-                        inp3 = parseFloat(prompt('KELILING LINGKARAN\nMasukan nilai jari - jari'));
-                        kelilingLingkaran(inp3);
-                        break;
-                    case 2:
-                        inp3 = parseFloat(prompt('LUAS LINGKARAN\nMasukan nilai jari - jari'));
-                        luasLingkaran(inp3);
-                        break;
-                    case 3:
-                        cntrl = confirm('Apakah anda yakin, ingin keluar ?');
-                        cntrl = (cntrl === true) ? false : true;
-                        break;
-                    default:
-                        alert('Anda memasukan menu yang salah!')
-                        break;
-                }
-            }
-            break;
-        // case jajar genjang
-        case 5:
-            while (cntrl === true) {
-                inp2 = parseInt(prompt('Pilih menu :\n1. Keliling\n2. Luas.\n3. Keluar.'));
-                switch (inp2) {
-                    case 1:
-                        inp3 = parseFloat(prompt('KELILING JAJAR GENJANG\nMasukan nilai alas'));
-                        inp4 = parseFloat(prompt('KELILING JAJAR GENJANG\nMasukan nilai sisi miring'));
-                        kelilingJajarGenjang(inp3, inp4);
-                        break;
-                    case 2:
-                        inp3 = parseFloat(prompt('LUAS JAJAR GENJANG\nMasukan nilai alas'));
-                        inp4 = parseFloat(prompt('LUAS JAJAR GENJANG\nMasukan nilai tinggi'));
-                        luasJajarGenjang(inp3, inp4);
-                        break;
-                    case 3:
-                        cntrl = confirm('Apakah anda yakin, ingin keluar ?');
-                        cntrl = (cntrl === true) ? false : true;
-                        break;
-                    default:
-                        alert('Anda memasukan menu yang salah!')
-                        break;
-                }
-            }
-            break;
-        // case belah ketupat
-        case 6:
-            while (cntrl === true) {
-                inp2 = parseInt(prompt('Pilih menu :\n1. Keliling\n2. Luas.\n3. Keluar.'));
-                switch (inp2) {
-                    case 1:
-                        inp3 = parseFloat(prompt('KELILING BELAH KETUPAT\nMasukan nilai sisi'));
-                        kelilingBelahKetupat(inp3);
-                        break;
-                    case 2:
-                        inp3 = parseFloat(prompt('LUAS BELAH KETUPAT\nMasukan nilai diagonal 1'));
-                        inp4 = parseFloat(prompt('LUAS BELAH KETUPAT\nMasukan nilai diagonal 2'));
-                        luasBelahKetupat(inp3, inp4);
-                        break;
-                    case 3:
-                        cntrl = confirm('Apakah anda yakin, ingin keluar ?');
-                        cntrl = (cntrl === true) ? false : true;
-                        break;
-                    default:
-                        alert('Anda memasukan menu yang salah!')
-                        break;
-                }
-            }
-            break;
-        // case trapesium
-        case 7:
-            while (cntrl === true) {
-                inp2 = parseInt(prompt('Pilih menu :\n1. Keliling\n2. Luas.\n3. Keluar.'));
-                switch (inp2) {
-                    case 1:
-                        inp3 = parseFloat(prompt('KELILING TRAPESIUM\nMasukan nilai sisi atas'));
-                        inp4 = parseFloat(prompt('KELILING TRAPESIUM\nMasukan nilai sisi bawah'));
-                        inp5 = parseFloat(prompt('KELILING TRAPESIUM\nMasukan nilai sisi miring'));
-                        inp6 = parseFloat(prompt('KELILING TRAPESIUM\nMasukan nilai tinggi'));
-                        kelilingTrapesium(inp3, inp4, inp5, inp6);
-                        break;
-                    case 2:
-                        inp3 = parseFloat(prompt('LUAS TRAPESIUM\nMasukan nilai sisi atas'));
-                        inp4 = parseFloat(prompt('LUAS TRAPESIUM\nMasukan nilai sisi bawah'));
-                        inp5 = parseFloat(prompt('LUAS TRAPESIUM\nMasukan nilai tinggi'));
-                        luasTrapesium(inp3, inp4, inp5);
-                        break;
-                    case 3:
-                        cntrl = confirm('Apakah anda yakin, ingin keluar ?');
-                        cntrl = (cntrl === true) ? false : true;
-                        break;
-                    default:
-                        alert('Anda memasukan menu yang salah!')
-                        break;
-                }
-            }
-            break;
-        // case layang layang
-        case 8:
-            while (cntrl === true) {
-                inp2 = parseInt(prompt('Pilih menu :\n1. Keliling\n2. Luas.\n3. Keluar.'));
-                switch (inp2) {
-                    case 1:
-                        inp3 = parseFloat(prompt('KELILING LAYANG - LAYANG\nMasukan nilai sisi 1'));
-                        inp4 = parseFloat(prompt('KELILING LAYANG - LAYANG\nMasukan nilai sisi 2'));
-                        kelilingLayang(inp3, inp4);
-                        break;
-                    case 2:
-                        inp3 = parseFloat(prompt('LUAS LAYANG - LAYANG\nMasukan nilai diagonal 1'));
-                        inp4 = parseFloat(prompt('LUAS LAYANG - LAYANG\nMasukan nilai diagonal 2'));
-                        luasLayang(inp3, inp4);
-                        break;
-                    case 3:
-                        cntrl = confirm('Apakah anda yakin, ingin keluar ?');
-                        cntrl = (cntrl === true) ? false : true;
-                        break;
-                    default:
-                        alert('Anda memasukan menu yang salah!')
-                        break;
-                }
-            }
-            break;
-        case 9:
-            cntrl = confirm('Apakah anda yakin, ingin keluar ?');
-            cntrl = (cntrl === true) ? false : true;
-            break;
-        default:
-            alert('Anda memasukan menu yang salah!');
-            break;
-    }
-
-    alert('Goodbye~')
-}
-
-// function
-
-// Persegi
-function luasPersegi(sisi) {
-    return alert(`Luas Persegi :\n${sisi * sisi}`);
-}
-
-function kelilingPersegi(sisi) {
-    return alert(`Keliling Persegi :\n${sisi * 4}`);
-}
-
-//Persegi Panjang
-function luasPersegiPanjang(p, l) {
-    return alert(`Luas Persegi Panjang :\n${p * l}`);
-
-}
-
-function kelilingPersegiPanjang(p, l) {
-    return alert(`Keliling Persegi Panjang :\n${(p + l) * 2}`);
-}
-
-// Segitiga
-function luasSegitiga(a, t) {
-    return alert(`Luas segitiga :\n${(a * t) / 2}`);
-}
-
-function kelilingSegitiga(sisi) {
-    return alert(`Keliling Segitiga :\n${sisi * 3}`);
-}
-
-// Lingkaran
-function luasLingkaran(r) {
-    return alert(`Luas Lingkaran :\n${3.14 * r * r}`);
-}
-
-function kelilingLingkaran(r) {
-    return alert(`Keliling Lingkaran :\n${3.14 * r * 2}`);
-}
-
-// jajar genjang
-function luasJajarGenjang(a, t) {
-    return alert(`Luas Jajar Genjang :\n${a * t}`);
-}
-
-function kelilingJajarGenjang(a, sm) {
-    return alert(`Keliling Jajar Genjang :\n${2 * (a * sm)}`);
-}
-
-// Belah Ketupat
-function luasBelahKetupat(diag1, diag2) {
-    return alert(`Luas Belah Ketupat :\n${(diag1 * diag2)/2}`);
-}
-
-function kelilingBelahKetupat(sisi) {
-    return alert(`Keliling Belah Ketupat :\n${4 * sisi}`);
-}
-
-// Trapesium
-function luasTrapesium(sa, sb, t) {
-    return alert(`Luas Trapesium :\n${((sa + sb)*t)/2}`);
-}
-
-function kelilingTrapesium(sa, sb, sm, t) {
-    return alert(`Keliling Trapesium :\n${sa + sb + sm + t}`);
-}
-
-// Layang - layang
-function luasLayang(diag1, diag2) {
-    return alert(`Luas Layang - Layang :\n${(diag1 * diag2)/2}`);
-}
-
-function kelilingLayang(sisi1, sisi2) {
-    return alert(`Keliling Layang - Layang :\n${(sisi1 + sisi2)*2}`);
-}
-*/
